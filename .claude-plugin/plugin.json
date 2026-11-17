@@ -1,0 +1,7 @@
+{
+  "name": "agent-runway",
+  "version": "0.1.0",
+  "description": "A side pane of everything running: progress bars with little Claude agents running along and tumbling off the edge",
+  "types": "./types/index.d.ts",
+  "license": "MIT"
+}

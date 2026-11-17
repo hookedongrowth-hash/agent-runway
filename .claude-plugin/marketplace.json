@@ -1,0 +1,5 @@
+{
+  "name": "agent-runway",
+  "owner": { "name": "hookedongrowth-hash" },
+  "plugins": [{ "name": "agent-runway", "source": "./" }]
+}
