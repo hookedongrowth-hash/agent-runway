@@ -126,8 +126,14 @@ export const register: Register = on => {
   })
 
   on('command.run', { command: 'runway' }, async $ => {
-    await $.ui.open({ id: PANE, title: TITLE })
-    return { text: 'Runway pane opened.' }
+    const opened = await $.ui.open({ id: PANE, title: TITLE })
+    if (opened.isPlaced) return { text: 'Runway pane opened.' }
+    const surfaces = await $.session.surfaces()
+    return {
+      text:
+        `Runway pane is open but not shown here (${opened.reason}). ` +
+        `Connected apps: ${surfaces.length ? surfaces.join(', ') : 'none'}.`,
+    }
   })
 
   on('tool.call', async ($, e, next) => {
